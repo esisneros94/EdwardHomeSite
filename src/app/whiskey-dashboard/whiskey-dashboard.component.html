@@ -35,9 +35,9 @@
         </div>
       </div>
     </div>
-    <div class='row' style='border: 1px solid green; margin: 1em 0em;'>
+    <div class='row' style='margin: 1em 0; margin-right: 4em; border: 1px solid green; float: right; width: 69%;'>
       <table style='border: 1px solid pink; width: 100%;'>
-        <tr style="background-color: lightslategray;">
+        <tr style="background-color: lightslategray; height: 1em;">
           <td>Whiskey Image</td>
           <td>Whiskey Name</td>
           <td>Whiskey Country</td>
@@ -45,7 +45,7 @@
           <td>Whiskey Type</td>
           <td>Whiskey Grade</td>
         </tr>
-        <tr *ngFor = "let review of Reviews">
+        <tr *ngFor = "let review of Reviews" style='height: 2em;'>
           <td><img src={{review.ImageSrc}} class='imageWrapper' /></td>
           <td>{{ review.WhiskeyName }}</td>
           <td>{{ review.WhiskeyCountry }}</td>
