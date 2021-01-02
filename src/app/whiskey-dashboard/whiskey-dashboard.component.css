@@ -1,0 +1,73 @@
+.imageDiv {
+  display: inline-block;
+}
+
+.imageFill {
+  object-fit: fill;
+  width: 100%;
+  border-radius: 2em;
+}
+
+.imageDiv:hover a img {
+  opacity: .4;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: left;
+}
+
+.imageRw {
+  text-align: center;
+  padding: 1em;
+}
+
+.imageDiv:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  display: inline-block;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.storyBox {
+  width: 90%;
+  height: 90%;
+  border-radius: 8px;
+  margin-top: 2em;
+  margin-left: 3em;
+}
+
+.pictureBox {
+  width: 80%;
+  height: 45%;
+  border-radius: 8px;
+  border: 1px solid green;
+  margin-top: 2em;
+  margin-left: 3em;
+}
+
+.reviewsBox {
+  width: 80%;
+  height: 65%;
+  border-radius: 8px;
+  border: 1px solid green;
+  margin-top: 2em;
+  margin-left: 3em;
+}
+
+.wrapper {
+  flex-wrap: wrap;
+  text-align: center;
+  width: 100%;
+  height: 50%;
+}

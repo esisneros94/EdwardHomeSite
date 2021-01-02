@@ -1,0 +1,93 @@
+<div>
+  <div style="margin-top: 2vh; overflow-y: auto; overflow-x: hidden;">
+    <div data-spy="scroll" class="scrollspy-example" style="margin: 3vh;">
+      <div style='text-align: center;'>
+        <h2>Tell Us About Your Whiskey</h2>
+      </div>
+      <form #demoform="ngForm" ngNativeValidate (ngSubmit)="onSubmit(form)">
+        <div class='form-group'>
+          <label for="whiskeyName">Whiskey Name</label>
+          <input type="text" class="form-control" id="whiskeyName" name="whiskeyName" name="name" #nameField="ngModel" required [(ngModel)]="WhiskeyForm.WhiskeyName">
+          <div [hidden]="nameField.valid || nameField.untouched" class="alert alert-danger">
+              Please Enter A Name
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label for="whiskeyCountry">Country of Origin</label>
+            <select class="form-control" id="whiskeyCountry" required name="country" #countryField="ngModel" [(ngModel)]="WhiskeyForm.WhiskeyCountry">
+              <option value="" selected disabled>Please select a Country...</option>
+              <option>Ireland</option>
+              <option>Japan</option>
+              <option>Scotland</option>
+              <option>United States</option>
+              <option>Canada</option>
+            </select>
+            <div [hidden]="countryField.valid || countryField.untouched" class="alert alert-danger">
+              Please Enter A Country
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="whiskeyType">Whiskey Type</label>
+            <select class="form-control" id="whiskeyType" #whiskeyType="ngModel" required name="type" [(ngModel)]="WhiskeyForm.WhiskeyType">
+              <option value="" selected disabled>Select a Whiskey Type...</option>
+              <option>Scotch Whiskey</option>
+              <option>Bourbon Whiskey</option>
+              <option>Irish Whiskey</option>
+              <option>Single Malt Scotch</option>
+              <option>Rye Whiskey</option>
+            </select>
+            <div [hidden]="whiskeyType.valid || whiskeyType.untouched" class="alert alert-danger">
+              Please Enter A Type
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="bottlePrice">Bottle Price</label>
+            <input type="text" class="form-control" #bottlePrice="ngModel" required id="bottlePrice" name="price" placeholder="Please Enter A Bottle Price" [(ngModel)]="WhiskeyForm.BottlePrice">
+            <div [hidden]="bottlePrice.valid || bottlePrice.untouched" class="alert alert-danger">
+              Please Enter A Price
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="whiskeyType">Whiskey Grade</label>
+            <select class="form-control" id="whiskeyGrade" #whiskeyGrade="ngModel" required name="grade" [(ngModel)]="WhiskeyForm.WhiskeyGrade">
+              <option value="" selected disabled>Select Your Whiskey Grade: </option>
+              <option>A</option>
+              <option>B</option>
+              <option>C</option>
+              <option>D</option>
+              <option>F</option>
+            </select>
+            <div [hidden]="whiskeyGrade.valid || whiskeyGrade.untouched" class="alert alert-danger">
+              Please Enter A Grade
+            </div>
+          </div>
+
+
+        <div class="form-group">
+          <label for="whiskeyImage">Example file input</label>
+          <input type="file" class="form-control-file" id="whiskeyImage" name="image" [(ngModel)]="WhiskeyForm.whiskeyImage">
+        </div>
+
+        <div class="form-group">
+          <label for="tasteFreeForm">Thoughts on Taste</label>
+          <textarea class="form-control" #comments="ngModel" id="tasteFreeForm" rows="3" required name="comments" [(ngModel)]="WhiskeyForm.Comments">
+
+          </textarea>
+        </div>
+        <div [hidden]="comments.valid || comments.untouched" class="alert alert-danger">
+          Please Enter Some Comments
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,47 @@
+<div style=' width: 100%; margin: 2% 0%;'>
+  <div style='width: 100%; height: auto;'>
+    <div style='text-align: center;'>
+      <h2>Whiskey Reviews</h2>
+    </div>
+    <h5>Search By: <input type = 'text' [(ngModel)] = 'filterKeyword'></h5>
+    <h6>Table filtered by: {{ filterKeyword }}</h6>
+    <h6>Number of records Returned: {{ amountOfRecords }}</h6>
+    <input type='button' (click)="toggleView()" class="toggleButton" value="{{buttonHelper}}" />
+  </div>
+</div>
+<div *ngIf="isTableShowing">
+  <table style='width: 100%;'>
+      <tr style='background-color: darkgreen;'>
+        <th>Whiskey Image</th>
+        <th>Whiskey Name</th>
+        <th>Whiskey Region</th>
+        <th>Whiskey Type</th>
+        <th>Bottle Price</th>
+        <th>Whiskey Grade</th>
+      </tr>
+      <tr *ngFor = "let review of Reviews">
+      <td><img src={{review.ImageSrc}} class='imageWrapper' /></td>
+      <td>{{ review.WhiskeyName }}</td>
+      <td>{{ review.WhiskeyCountry }}</td>
+      <td> {{ review.WhiskeyType }}</td>
+      <td>{{ review.BottlePrice | currency: 'USD':'symbol': '1.2-2' }}</td>
+      <td>{{ review.WhiskeyGrade }}</td>
+      </tr>
+  </table>
+</div>
+<div style="height: 100%;" *ngIf="!isTableShowing">
+  <div class="cardsWrapper">
+      <div *ngFor="let review of Reviews" class='col-md-4 cardContainer' >
+        <mat-card class="whiskeyCard">
+          <mat-card-title>{{ review.WhiskeyName }}</mat-card-title>
+          <mat-card-subtitle> {{ review.WhiskeyCountry }}</mat-card-subtitle>
+          <img src={{review.ImageSrc}} height="150em">
+            <mat-card-content>
+              Bottle Price: {{review.BottlePrice}} <br/>
+              Whiskey Grade: {{ review.WhiskeyGrade }} <br/>
+              Comments: {{review.Comments}}
+            </mat-card-content>
+        </mat-card>
+      </div>
+  </div>
+</div>

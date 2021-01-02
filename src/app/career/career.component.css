@@ -1,0 +1,31 @@
+.fill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 30px;
+}
+.fill img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+.skillsListItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+
+}
+.bottomScrollBoxes {
+  height: 100%;
+  border-radius: 30px;
+  padding: 2%;
+}
+
+.leftBorder{
+  border-left: 1px solid black;
+}
+.skillsListRow {
+  height: 33.3%;
+}
