@@ -1,53 +1,39 @@
 <div style="height: 100%;">
   <div class='wrapper'>
-      <div class='row' style='height: 100%; margin: 0 0px;'>
-        <div class='col-md-3'>
-          <div class="pictureBox">
+    <div class='row' style='height: 100%; margin: 0 0px; border: 1px solid yellow;'>
+      <div class='col-md-3'>
+        <div class="pictureBox">
             Where the pictures
-          </div>
-          <div class="reviewsBox">
-            Where my personal reviews will go.
-          </div>
         </div>
-        <div class='col-md-9'>
-          <div class="storyBox">
-            <h3>How I Got Started Tasting Whiskey</h3>
-              <div style='text-align: left; margin-top: 2em;'>
-                <p>
+        <div class='imageDiv' style='display: inline-block; margin-left: 2.5em; width: 80%; margin-top: 1em;'>
+          <a [routerLink]="['/education']" class="nav-link" href="#">
+            <img src="assets/images/pub.jpg" style='object-fit: cover; width: 100%; border-radius: 2em; height: 25vh;'>
+              <div class="middle">
+                <div class="text">Education</div>
+              </div>
+          </a>
+        </div>
+      </div>
+      <div class='col-md-9'>
+        <div class="storyBox">
+          <h3>How I Got Started Tasting Whiskey</h3>
+            <div style='text-align: left; margin-top: 2em;'>
+              <p>
                   Whiskey was an aquired taste to me. Once I turned 21, I was a frequent customer of the different breweries around Albuquerque (and still am!). After awhile, I
                   wanted something a little different than the beer taste, and that's when my step-father turned me onto Scotch and Whiskey. As a college student not making enough money to
                   by a fancy bottle of scotch every month, I started with Whiskey mixers like the all famous "Jack and Coke" while splurging from time to time on Old Fashioned's at fancier
                   resturants. My first taste of true Whiskey was the all traditional Maker's Mark my step-father once had me try. While I admittedly thought it was just too much for my senses, subconsciously,
                   I liked the feeling. From then on, I wanted to learn more about the process and the different elixers from around the world.
-                </p>
-                <p>
+              </p>
+              <p>
                   By the time I got into Graduate School, I was doing my best to learn more about how it was made, the different regions of the world where Whisky was made, and what made them all different. By no means am I an expert in the field,
                   no means am I an expert in the field, but I do enjoy trying new bottles and most importantly, sharing them will fellow drinkers. There is almost something cerimonial about opening up a new bottle of Scotch from Speyside, Scotland
                   or finishing a bottle from Tennessee, USA, but in either case, the memories are just as important as the bottle you are drinking. I'll continue to try new things and add them to the reviews list, hopefully encouraging you to try
                   one of the bottles, and create memories of your own.
-                </p>
+              </p>
             </div>
-            <div class='wrapper'>
-              <div style="width: 100%; margin-top: 3em; margin-bottom: 1em;">
-                <div class="imageDiv col-md-4" style='display: inline-block; object-fit: fill;'>
-                  <a [routerLink]="['/reviews']" class="nav-link" href="#">
-                    <img src="assets/images/pub.jpg" style='object-fit: cover; width: 100%; border-radius: 2em; height: 25vh;'>
-                    <div class="middle">
-                      <div class="text">Whiskey Reviews</div>
-                    </div>
-                  </a>
-                </div>
-                <div class="imageDiv col-md-4" style='display: inline-block;'>
-                  <a [routerLink]="['/reviewForm']" class="nav-link" href="#">
-                    <img src="assets/images/form.jpg" style='object-fit: cover; width: 100%; border-radius: 2em; height: 25vh;'>
-                    <div class="middle">
-                      <div class="text">Submit a New Review</div>
-                    </div>
-                  </a>
-                </div>
-            </div>
-          </div>
         </div>
       </div>
+    </div>
   </div>
 </div>

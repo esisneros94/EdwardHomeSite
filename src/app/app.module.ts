@@ -12,7 +12,6 @@ import { StarComponent } from './shared/star.component';
 import { HomeComponent } from './home/home.component';
 import { MatCardModule } from '@angular/material/card';
 import { WhiskeyReviewsComponent } from './whiskey-reviews/whiskey-reviews.component';
-import { WhiskeyReviewFormComponent } from './whiskey-review-form/whiskey-review-form.component';
 import { WhiskeyDashboardComponent } from './whiskey-dashboard/whiskey-dashboard.component';
 
 
@@ -25,7 +24,6 @@ import { WhiskeyDashboardComponent } from './whiskey-dashboard/whiskey-dashboard
     StarComponent,
     HomeComponent,
     WhiskeyReviewsComponent,
-    WhiskeyReviewFormComponent,
     WhiskeyDashboardComponent,
   ],
   imports: [
@@ -37,7 +35,6 @@ import { WhiskeyDashboardComponent } from './whiskey-dashboard/whiskey-dashboard
       {path: 'education', component: educationComponent},
       {path: 'career', component: careerComponent},
       {path: 'reviews', component: WhiskeyReviewsComponent},
-      {path: 'reviewForm', component: WhiskeyReviewFormComponent},
       {path: 'whiskey', component: WhiskeyDashboardComponent},
       {path: '**', component: HomeComponent}
     ]),

@@ -16,12 +16,13 @@
   transition: .5s ease;
   opacity: 0;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 70%;
+  left: 55%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   text-align: left;
 }
+
 
 .imageRw {
   text-align: center;
@@ -69,5 +70,4 @@
   flex-wrap: wrap;
   text-align: center;
   width: 100%;
-  height: 50%;
 }
