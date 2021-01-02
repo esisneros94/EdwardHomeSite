@@ -71,3 +71,9 @@
   text-align: center;
   width: 100%;
 }
+
+.imageWrapper {
+  width: 80px;
+  height: 80px;
+  margin: 3%;
+}
