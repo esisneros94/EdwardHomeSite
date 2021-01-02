@@ -1,0 +1,22 @@
+sudo: true
+language: node_js
+node_js:
+  - 10.16.0
+git:
+ quiet: true
+cache: npm
+addons:
+  ssh_known_hosts: 138.197.196.1
+script:
+  ng build --prod=false
+before_install:
+- openssl aes-256-cbc -K $encrypted_0ddd2445e49f_key -iv $encrypted_0ddd2445e49f_iv
+  -in travis_rsa.enc -out travis_rsa -d
+install:
+ - npm install
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: bash deploy.sh
+  on:
+    all_branches: true

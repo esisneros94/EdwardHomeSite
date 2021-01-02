@@ -49,16 +49,7 @@
 
 .pictureBox {
   width: 80%;
-  height: 45%;
-  border-radius: 8px;
-  border: 1px solid green;
-  margin-top: 2em;
-  margin-left: 3em;
-}
-
-.reviewsBox {
-  width: 80%;
-  height: 65%;
+  height: 90%;
   border-radius: 8px;
   border: 1px solid green;
   margin-top: 2em;

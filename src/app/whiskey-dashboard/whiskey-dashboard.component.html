@@ -5,9 +5,6 @@
           <div class="pictureBox">
             Where the pictures
           </div>
-          <div class="reviewsBox">
-            Where my personal reviews will go.
-          </div>
         </div>
         <div class='col-md-9'>
           <div class="storyBox">
@@ -27,27 +24,27 @@
                   one of the bottles, and create memories of your own.
                 </p>
             </div>
-            <div class='wrapper'>
-              <div style="width: 100%; margin-top: 3em; margin-bottom: 1em;">
-                <div class="imageDiv col-md-4" style='display: inline-block; object-fit: fill;'>
-                  <a [routerLink]="['/reviews']" class="nav-link" href="#">
-                    <img src="assets/images/pub.jpg" style='object-fit: cover; width: 100%; border-radius: 2em; height: 25vh;'>
-                    <div class="middle">
-                      <div class="text">Whiskey Reviews</div>
-                    </div>
-                  </a>
-                </div>
-                <div class="imageDiv col-md-4" style='display: inline-block;'>
-                  <a [routerLink]="['/reviewForm']" class="nav-link" href="#">
-                    <img src="assets/images/form.jpg" style='object-fit: cover; width: 100%; border-radius: 2em; height: 25vh;'>
-                    <div class="middle">
-                      <div class="text">Submit a New Review</div>
-                    </div>
-                  </a>
-                </div>
-            </div>
           </div>
         </div>
+      </div>
+  </div>
+  <div class='wrapper'>
+    <div style="width: 100%; margin-top: 3em; margin-bottom: 1em;">
+      <div class="imageDiv col-md-4" style='display: inline-block; object-fit: fill;'>
+        <a [routerLink]="['/reviews']" class="nav-link" href="#">
+          <img src="assets/images/pub.jpg" style='object-fit: cover; width: 100%; border-radius: 2em; height: 35vh;'>
+          <div class="middle">
+            <div class="text">Whiskey Reviews</div>
+          </div>
+        </a>
+      </div>
+      <div class="imageDiv col-md-4" style='display: inline-block;'>
+        <a [routerLink]="['/reviewForm']" class="nav-link" href="#">
+          <img src="assets/images/form.jpg" class="imageFill">
+          <div class="middle">
+            <div class="text">Submit a New Review</div>
+          </div>
+        </a>
       </div>
   </div>
 </div>
