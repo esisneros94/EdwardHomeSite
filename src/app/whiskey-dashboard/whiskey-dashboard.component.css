@@ -23,6 +23,14 @@
   text-align: left;
 }
 
+table tr:nth-child(even) {
+  background-color: white;
+  color: black;
+};
+
+table tr:nth-child(odd) {
+  background-color: grey;
+};
 
 .imageRw {
   text-align: center;
@@ -41,11 +49,11 @@
 }
 
 .storyBox {
-  width: 90%;
+  width: 95%;
   height: 90%;
   border-radius: 8px;
   margin-top: 2em;
-  margin-left: 3em;
+  margin-left: 2em;
 }
 
 .pictureBox {
@@ -76,4 +84,22 @@
   width: 4.5em;
   height: 4.5em;
   margin: 3%;
+}
+
+.reviewButtons {
+  border: 1px solid lightblue;
+  border-radius: 10em;
+  margin-top: 2em;
+  height: 4em;
+  background-color: grey;
+  padding: 1em;
+}
+
+.lastReviewButton {
+  border: 1px solid lightblue;
+  border-radius: 10em;
+  margin-top: 2em;
+  height: 4em;
+  background-color: grey;
+  padding: .7em;
 }

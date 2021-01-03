@@ -1,20 +1,12 @@
 <div style="height: 100%;">
   <div class='wrapper'>
     <div class='row' style='height: 100%; margin: 0 0px;'>
-      <div class='col-md-3'>
-        <div class="pictureBox">
-            Where the pictures
-        </div>
-        <div class='imageDiv' style='display: inline-block; margin-left: 2.5em; width: 80%; margin-top: 1em;'>
-          <a [routerLink]="['/education']" class="nav-link" href="#">
-            <img src="assets/images/pub.jpg" style='object-fit: cover; width: 100%; border-radius: 2em; height: 25vh;'>
-              <div class="middle">
-                <div class="text">Education</div>
-              </div>
-          </a>
+      <div class='col-md-2' style="margin-top: 4em;">
+        <div class="pictureBox" style='height: 14em;'>
+            Where the pictures will go
         </div>
       </div>
-      <div class='col-md-9'>
+      <div class='col-md-10'>
         <div class="storyBox">
           <h3>How I Got Started Tasting Whiskey</h3>
             <div style='text-align: left; margin-top: 2em;'>
@@ -35,25 +27,53 @@
         </div>
       </div>
     </div>
-    <div class='row' style='margin: 1em 0; margin-right: 4em; border: 1px solid green; float: right; width: 69%;'>
-      <table style='border: 1px solid pink; width: 100%;'>
-        <tr style="background-color: lightslategray; height: 1em;">
-          <td>Whiskey Image</td>
-          <td>Whiskey Name</td>
-          <td>Whiskey Country</td>
-          <td>Whiskey Price</td>
-          <td>Whiskey Type</td>
-          <td>Whiskey Grade</td>
-        </tr>
-        <tr *ngFor = "let review of Reviews" style='height: 2em;'>
-          <td><img src={{review.ImageSrc}} class='imageWrapper' /></td>
-          <td>{{ review.WhiskeyName }}</td>
-          <td>{{ review.WhiskeyCountry }}</td>
-          <td> {{ review.WhiskeyType }}</td>
-          <td>{{ review.BottlePrice | currency: 'USD':'symbol': '1.2-2' }}</td>
-          <td>{{ review.WhiskeyGrade }}</td>
-        </tr>
-      </table>
+    <div class='row' style='margin-top: 2em; height: 60%;'>
+      <div class='col-md-2' style="text-align: center;">
+        <div style="height: 20em; margin-left: 4em; text-align: center;">
+          <a href="#" style='color: inherit;'>
+            <div class='reviewButtons'>
+              View Card Version
+            </div>
+          </a>
+          <a href="#" style='color: inherit;'>
+            <div class='reviewButtons'>
+              View Table Version
+            </div>
+          </a>
+          <a href="#" style='color: inherit;'>
+            <div class='reviewButtons'>
+              View Bar Graph Version
+            </div>
+          </a>
+          <a href="#" style='color: inherit;'>
+            <div class='lastReviewButton'>
+              Check out a Whiskey in Detail
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class='col-md-10' style="height: auto;">
+        <div style='width: 94%; margin-left: 2.5em;'>
+          <table style='border: 1px solid cornflowerblue; width: 100%;'>
+            <tr style="background-color: lightslategray; height: 1em;">
+              <td>Whiskey Image</td>
+              <td>Whiskey Name</td>
+              <td>Whiskey Country</td>
+              <td>Whiskey Price</td>
+              <td>Whiskey Type</td>
+              <td>Whiskey Grade</td>
+            </tr>
+            <tr *ngFor = "let review of Reviews" style='height: 2em;'>
+              <td><img src={{review.ImageSrc}} class='imageWrapper' /></td>
+              <td>{{ review.WhiskeyName }}</td>
+              <td>{{ review.WhiskeyCountry }}</td>
+              <td> {{ review.WhiskeyType }}</td>
+              <td>{{ review.BottlePrice | currency: 'USD':'symbol': '1.2-2' }}</td>
+              <td>{{ review.WhiskeyGrade }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </div>
-  </div>
+</div>
 </div>
