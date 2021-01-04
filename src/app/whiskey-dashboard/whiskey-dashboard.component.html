@@ -30,30 +30,19 @@
     <div class='row' style='margin-top: 2em; height: 60%;'>
       <div class='col-md-2' style="text-align: center;">
         <div style="height: 20em; margin-left: 4em; text-align: center;">
-          <a href="#" style='color: inherit;'>
-            <div class='reviewButtons'>
-              View Card Version
-            </div>
+          <a style='color: inherit;'>
+            <Input type='button' (click)="toggleTableView()" class ='toggleButton' value={{buttonHelper}}>
           </a>
-          <a href="#" style='color: inherit;'>
-            <div class='reviewButtons'>
-              View Table Version
-            </div>
+          <a style='color: inherit;'>
+            <Input type='button' class ='toggleButton' value="Graph View On">
           </a>
-          <a href="#" style='color: inherit;'>
-            <div class='reviewButtons'>
-              View Bar Graph Version
-            </div>
-          </a>
-          <a href="#" style='color: inherit;'>
-            <div class='lastReviewButton'>
-              Check out a Whiskey in Detail
-            </div>
+          <a style='color: inherit;'>
+            <Input type='button' class ='toggleButton' value="Check out Whiskey in Detail">
           </a>
         </div>
       </div>
       <div class='col-md-10' style="height: auto;">
-        <div style='width: 94%; margin-left: 2.5em;'>
+        <div style='width: 94%; margin-left: 2.5em;' *ngIf="isTableShowing">
           <table style='border: 1px solid cornflowerblue; width: 100%;'>
             <tr style="background-color: lightslategray; height: 1em;">
               <td>Whiskey Image</td>
@@ -73,6 +62,22 @@
             </tr>
           </table>
         </div>
+        <div style='width: 94%; border: 1px solid yellow;' *ngIf="!isTableShowing">
+          <div class="cardsWrapper">
+            <div *ngFor="let review of Reviews" class='col-md-2 cardContainer' >
+              <mat-card class="whiskeyCard">
+                <mat-card-title>{{ review.WhiskeyName }}</mat-card-title>
+                <mat-card-subtitle> {{ review.WhiskeyCountry }}</mat-card-subtitle>
+                <img src={{review.ImageSrc}} height="150em">
+                  <mat-card-content>
+                    Bottle Price: {{review.BottlePrice}} <br/>
+                    Whiskey Grade: {{ review.WhiskeyGrade }} <br/>
+                    Comments: {{review.Comments}}
+                  </mat-card-content>
+              </mat-card>
+            </div>
+        </div>
+    </div>
       </div>
     </div>
 </div>

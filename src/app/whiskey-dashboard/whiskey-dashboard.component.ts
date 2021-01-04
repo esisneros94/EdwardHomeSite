@@ -8,6 +8,9 @@ import { Review } from '../review';
   styleUrls: ['./whiskey-dashboard.component.css']
 })
 export class WhiskeyDashboardComponent implements OnInit {
+  amountOfRecords = 0;
+  isTableShowing = true;
+  buttonHelper = 'Show Cards'
 
   Reviews = [
       new Review(1, 'Monkey Shoulder', 'Scotland', 'Single Malt Scotch', 38.99, 'assets/images/monkeyShoulder.jpeg', 'B', 'A lot of caramel tones'),
@@ -22,6 +25,17 @@ export class WhiskeyDashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.amountOfRecords = this.Reviews.length;
+  }
+
+  toggleTableView() {
+    this.isTableShowing = !this.isTableShowing;
+    if(this.isTableShowing) {
+      this.buttonHelper = 'Show Cards';
+    }
+    else {
+      this.buttonHelper = 'Show Table';
+    }
   }
 
 }

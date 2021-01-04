@@ -103,3 +103,35 @@ table tr:nth-child(odd) {
   background-color: grey;
   padding: .7em;
 }
+.whiskeyCard {
+  height: 20%;
+  width: 15em;
+  display: inline-block;
+}
+
+.cardContainer {
+  width: 80%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border: 1px solid red;
+  display: inline-block;
+}
+
+.cardsWrapper {
+  flex-wrap: wrap;
+  text-align: center;
+  width: 100%;
+  height: inherit;
+  overflow: auto;
+}
+
+.toggleButton {
+  width: 90%;
+  background-color: cornflowerblue;
+  border-radius: 8px;
+}
+
+.imageWrapper {
+  width: 80px;
+  height: 80px;
+}
