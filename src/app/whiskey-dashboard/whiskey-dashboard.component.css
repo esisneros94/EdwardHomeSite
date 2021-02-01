@@ -126,9 +126,11 @@ table tr:nth-child(odd) {
 }
 
 .toggleButton {
-  width: 90%;
+  width: 100%;
+  margin-right: 10em;
   background-color: cornflowerblue;
   border-radius: 8px;
+  height: auto;
 }
 
 .imageWrapper {

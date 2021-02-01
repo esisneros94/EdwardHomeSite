@@ -27,21 +27,24 @@
         </div>
       </div>
     </div>
-    <div class='row' style='margin-top: 2em; height: 60%;'>
-      <div class='col-md-2' style="text-align: center;">
-        <div style="height: 20em; margin-left: 4em; text-align: center;">
-          <a style='color: inherit;'>
-            <Input type='button' (click)="toggleTableView()" class ='toggleButton' value={{buttonHelper}}>
-          </a>
-          <a style='color: inherit;'>
-            <Input type='button' class ='toggleButton' value="Graph View On">
-          </a>
-          <a style='color: inherit;'>
-            <Input type='button' class ='toggleButton' value="Check out Whiskey in Detail">
-          </a>
+    <div class='row' style='width: 100%; height: auto; margin-top: 2em;'>
+      <div style="text-align: center; display: inline; align-items: center; margin: auto;">
+        <div style="height: 4em; text-align: center; display: flex;">
+          <div>
+            <a style='color: inherit;'>
+              <Input type='button' (click)="toggleTableView()" class ='toggleButton' value={{buttonHelper}}>
+            </a>
+          </div>
+          <div style='margin-left: 3em;'>
+            <a style='color: inherit;'>
+              <Input type='button' class ='toggleButton' value="Graph View On">
+            </a>
+          </div>
         </div>
       </div>
-      <div class='col-md-10' style="height: auto;">
+    </div>
+    <div class='row' style='height: 60%;'>
+      <div class='col-md-12' style="height: auto;">
         <div style='width: 94%; margin-left: 2.5em;' *ngIf="isTableShowing">
           <table style='border: 1px solid cornflowerblue; width: 100%;'>
             <tr style="background-color: lightslategray; height: 1em;">
