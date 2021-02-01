@@ -65,9 +65,9 @@
             </tr>
           </table>
         </div>
-        <div style='width: 94%; border: 1px solid yellow;' *ngIf="!isTableShowing">
+        <div style='width: 100%;' *ngIf="!isTableShowing">
           <div class="cardsWrapper">
-            <div *ngFor="let review of Reviews" class='col-md-2 cardContainer' >
+            <div *ngFor="let review of Reviews" class='col-md-4 cardContainer' >
               <mat-card class="whiskeyCard">
                 <mat-card-title>{{ review.WhiskeyName }}</mat-card-title>
                 <mat-card-subtitle> {{ review.WhiskeyCountry }}</mat-card-subtitle>
