@@ -16,12 +16,21 @@
   transition: .5s ease;
   opacity: 0;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 70%;
+  left: 55%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   text-align: left;
 }
+
+table tr:nth-child(even) {
+  background-color: white;
+  color: black;
+};
+
+table tr:nth-child(odd) {
+  background-color: grey;
+};
 
 .imageRw {
   text-align: center;
@@ -40,11 +49,11 @@
 }
 
 .storyBox {
-  width: 90%;
+  width: 95%;
   height: 90%;
   border-radius: 8px;
   margin-top: 2em;
-  margin-left: 3em;
+  margin-left: 2em;
 }
 
 .pictureBox {
@@ -69,5 +78,60 @@
   flex-wrap: wrap;
   text-align: center;
   width: 100%;
-  height: 50%;
+}
+
+.imageWrapper {
+  width: 4.5em;
+  height: 4.5em;
+  margin: 3%;
+}
+
+.reviewButtons {
+  border: 1px solid lightblue;
+  border-radius: 10em;
+  margin-top: 2em;
+  height: 4em;
+  background-color: grey;
+  padding: 1em;
+}
+
+.lastReviewButton {
+  border: 1px solid lightblue;
+  border-radius: 10em;
+  margin-top: 2em;
+  height: 4em;
+  background-color: grey;
+  padding: .7em;
+}
+.whiskeyCard {
+  height: 20%;
+  width: 15em;
+  display: inline-block;
+}
+
+.cardContainer {
+  width: 80%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border: 1px solid red;
+  display: inline-block;
+}
+
+.cardsWrapper {
+  flex-wrap: wrap;
+  text-align: center;
+  width: 100%;
+  height: inherit;
+  overflow: auto;
+}
+
+.toggleButton {
+  width: 90%;
+  background-color: cornflowerblue;
+  border-radius: 8px;
+}
+
+.imageWrapper {
+  width: 80px;
+  height: 80px;
 }
