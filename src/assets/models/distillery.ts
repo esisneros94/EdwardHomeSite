@@ -1,4 +1,5 @@
 export class Distillery {
+  distilleryId: number;
   name: string;
   country: string;
   region: string;
@@ -7,5 +8,5 @@ export class Distillery {
   latitude: number;
   longitude: number;
   websiteLink: string;
-  logoPictureName: number
+  logoPictureName: string
 }

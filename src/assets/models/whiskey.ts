@@ -3,5 +3,6 @@ export class Whiskey {
   name: string;
   distilleryId: number;
   bottlePrice: number;
+  whiskeyType: string;
   bottleAge: number;
 }
