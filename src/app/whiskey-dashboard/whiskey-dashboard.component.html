@@ -55,27 +55,27 @@
               <td>Whiskey Type</td>
               <td>Whiskey Grade</td>
             </tr>
-            <tr *ngFor = "let review of Reviews" style='height: 2em;'>
-              <td><img src={{review.ImageSrc}} class='imageWrapper' /></td>
-              <td>{{ review.WhiskeyName }}</td>
-              <td>{{ review.WhiskeyCountry }}</td>
-              <td> {{ review.WhiskeyType }}</td>
-              <td>{{ review.BottlePrice | currency: 'USD':'symbol': '1.2-2' }}</td>
-              <td>{{ review.WhiskeyGrade }}</td>
+            <tr *ngFor = "let whiskey of whiskiesReturned" style='height: 2em;'>
+              <td><img src={{whiskey.ImageSrc}} class='imageWrapper' /></td>
+              <td>{{ whiskey.name }}</td>
+              <td> Scotland </td>
+              <td> {{ whiskey.whiskeyType }}</td>
+              <td>{{ whiskey.bottlePrice | currency: 'USD':'symbol': '1.2-2' }}</td>
+              <td> A+ </td>
             </tr>
           </table>
         </div>
         <div style='width: 100%;' *ngIf="!isTableShowing">
           <div class="cardsWrapper">
-            <div *ngFor="let review of Reviews" class='col-md-4 cardContainer' >
+            <div *ngFor="let whiskey of whiskiesReturned" class='col-md-4 cardContainer' >
               <mat-card class="whiskeyCard">
-                <mat-card-title>{{ review.WhiskeyName }}</mat-card-title>
-                <mat-card-subtitle> {{ review.WhiskeyCountry }}</mat-card-subtitle>
+                <mat-card-title>{{ whiskey.name }}</mat-card-title>
+                <mat-card-subtitle> Scotland </mat-card-subtitle>
                 <img src={{review.ImageSrc}} height="150em">
                   <mat-card-content>
-                    Bottle Price: {{review.BottlePrice}} <br/>
-                    Whiskey Grade: {{ review.WhiskeyGrade }} <br/>
-                    Comments: {{review.Comments}}
+                    Bottle Price: {{whiskey.bottlePrice}} <br/>
+                    Whiskey Grade: A+ <br/>
+                    Comments: This is a good tasting whiskey. This is hard coded.
                   </mat-card-content>
               </mat-card>
             </div>
