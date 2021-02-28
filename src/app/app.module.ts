@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { MatCardModule } from '@angular/material/card';
 import { WhiskeyReviewsComponent } from './whiskey-reviews/whiskey-reviews.component';
 import { WhiskeyDashboardComponent } from './whiskey-dashboard/whiskey-dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { WhiskeyDashboardComponent } from './whiskey-dashboard/whiskey-dashboard
     BrowserModule,
     MatCardModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
       {path: 'education', component: educationComponent},
