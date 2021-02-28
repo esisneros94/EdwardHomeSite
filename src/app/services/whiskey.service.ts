@@ -11,6 +11,6 @@ export class WhiskeyService {
   constructor(private http: HttpClient) { }
 
   getAllWhiskies(): Observable<Whiskey[]> {
-    return this.http.get<Whiskey[]>('../../assets/whiskey');
+    return this.http.get<Whiskey[]>('../../assets/whiskey.json');
   }
 }
