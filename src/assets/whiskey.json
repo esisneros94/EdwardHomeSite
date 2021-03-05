@@ -1,0 +1,10 @@
+[
+  {"whiskeyId": 1, "name": "Glenfiddich 12", "distilleryId": 1, "bottlePrice": 38.99, "whiskeyType": "Single Malt Scotch", "bottleAge": 12},
+  {"whiskeyId": 2, "name": "Jack Daniels Tennessee Whiskey", "distilleryId": 2, "bottlePrice": 17.99, "whiskeyType": "Whiskey", "bottleAge": null},
+  {"whiskeyId": 3, "name": "Classic Laddie", "distilleryId": 3, "bottlePrice": 50.00, "whiskeyType": "Single Malth Scotch", "bottleAge": null},
+  {"whiskeyId": 4, "name": "Monkey Shoulder", "distilleryId": 4, "bottlePrice": 40.00, "whiskeyType": "Blended Malt Scotch", "bottleAge": null},
+  {"whiskeyId": 5, "name": "Glenlivet 12", "distilleryId": 5, "bottlePrice": 32.99, "whiskeyType": "Single Malt Scotch", "bottleAge": 12},
+  {"whiskeyId": 6, "name": "Screwball Peanut Butter Whiskey", "distilleryId": 6, "bottlePrice": 17.99, "whiskeyType": "Whiskey", "bottleAge": null},
+  {"whiskeyId": 7, "name": "Glen Kirk Speyside", "distilleryId": 7, "bottlePrice": 38.99, "whiskeyType": "Single Malt Scotch", "bottleAge": null},
+  {"whiskeyId": 8, "name": "Woodford Reserve", "distilleryId": 8, "bottlePrice": 27.99, "whiskeyType": "Kentucky Bourbon", "bottleAge": null}
+]
