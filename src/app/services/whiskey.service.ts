@@ -2,15 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Whiskey } from '../../assets/models/whiskey';
+import { DistilleryService } from './distillery.service';
+import { map, combineLatest, catchError } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
 })
 export class WhiskeyService {
 
-  constructor(private http: HttpClient) { }
+  allWhiskeys$ = this.http.get<Whiskey[]>('../../assets/whiskey.json').pipe();
 
-  getAllWhiskies(): Observable<Whiskey[]> {
-    return this.http.get<Whiskey[]>('../../assets/whiskey.json');
-  }
+  constructor(private http: HttpClient, private distilleryService: DistilleryService) { }
 }

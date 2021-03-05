@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Whiskey } from 'src/assets/models/whiskey';
 import { Review } from '../review';
 import { WhiskeyService } from '../services/whiskey.service';
+import { DistilleryService } from '../services/distillery.service';
+import { combineLatest } from 'rxjs';
+import { map, tap } from 'rxjs/operators'
+import { HttpClient } from '@angular/common/http';
+
 
 
 @Component({
@@ -9,23 +14,12 @@ import { WhiskeyService } from '../services/whiskey.service';
   templateUrl: './whiskey-dashboard.component.html',
   styleUrls: ['./whiskey-dashboard.component.css']
 })
-export class WhiskeyDashboardComponent implements OnInit {
+export class WhiskeyDashboardComponent implements OnInit{
   amountOfRecords = 0;
   isTableShowing = true;
-  whiskiesReturned: Whiskey[];
+  WhiskeyTableElements = Array<Whiskey>();
   buttonHelper = 'Show Cards'
 
-  constructor(private whiskeyService: WhiskeyService) { }
-
-  ngOnInit() {
-    this.whiskeyService.getAllWhiskies().subscribe(
-        data => this.whiskiesReturned = data,
-        (err: any) => {console.log(err)},
-        () => console.log('All done with the processing')
-      )
-
-      setTimeout(() => console.log(this.whiskiesReturned[1].name), 4000);
-  };
 
   toggleTableView() {
     this.isTableShowing = !this.isTableShowing;
@@ -37,4 +31,24 @@ export class WhiskeyDashboardComponent implements OnInit {
     }
   }
 
+  whiskeysWithDistilleries$ = combineLatest([
+    this.whiskeyService.allWhiskeys$,
+    this.distilleryService.allDistilleries$
+  ]).pipe(
+    map(([whiskies, distilleries]) =>
+      whiskies.map(whiskey => ({
+        ...whiskey,
+        distilleryName: distilleries.find(d => d.distilleryId === whiskey.distilleryId).name,
+        distilleryCountry: distilleries.find(d => d.distilleryId === whiskey.distilleryId).country
+      }) as Whiskey ))
+  );
+
+
+  ngOnInit() {
+    this.whiskeysWithDistilleries$.subscribe(
+      (data => this.WhiskeyTableElements = data)
+    )
+  }
+
+  constructor(private http: HttpClient, private whiskeyService: WhiskeyService, private distilleryService: DistilleryService) { }
 }
