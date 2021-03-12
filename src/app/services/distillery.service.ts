@@ -10,6 +10,10 @@ export class DistilleryService {
 
   constructor(private http: HttpClient) { }
 
-  allDistilleries$ = this.http.get<Distillery[]>('../../assets/distillery.json');
+  getAllDistilleries(): Observable<Distillery[]> {
+    return this.http.get<Distillery[]>('../../assets/distillery.json');
+  }
+
+  allDistilleries$ = this.getAllDistilleries();
 
 }

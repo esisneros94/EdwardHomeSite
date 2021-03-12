@@ -11,7 +11,6 @@ import { careerComponent } from './career/career.component';
 import { StarComponent } from './shared/star.component';
 import { HomeComponent } from './home/home.component';
 import { MatCardModule } from '@angular/material/card';
-import { WhiskeyReviewsComponent } from './whiskey-reviews/whiskey-reviews.component';
 import { WhiskeyDashboardComponent } from './whiskey-dashboard/whiskey-dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -24,7 +23,6 @@ import { HttpClientModule } from '@angular/common/http';
     careerComponent,
     StarComponent,
     HomeComponent,
-    WhiskeyReviewsComponent,
     WhiskeyDashboardComponent,
   ],
   imports: [
@@ -36,7 +34,6 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule.forRoot([
       {path: 'education', component: educationComponent},
       {path: 'career', component: careerComponent},
-      {path: 'reviews', component: WhiskeyReviewsComponent},
       {path: 'whiskey', component: WhiskeyDashboardComponent},
       {path: '**', component: HomeComponent}
     ]),
