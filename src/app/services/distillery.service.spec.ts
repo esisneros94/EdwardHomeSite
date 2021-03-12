@@ -8,6 +8,12 @@ describe('DistilleryService', () => {
   let dataService: DistilleryService
   let httpTestingController: HttpTestingController
 
+  let distilleries: Distillery[] =
+  [
+    {"distilleryId": 1, "name": "Glenfiddich", "country": "Scotland", "region": "Speyside", "foundedYear": 1886, "founderName": "William Grant", "latitude": 57.4550, "longitude": -3.1290, "websiteLink": "https://www.glenfiddich.com/us/", "logoPictureName": "glenfiddich.jpg"},
+    {"distilleryId": 2, "name": "Jack Daniels\"", "country": "United States", "region": "Southeast", "foundedYear": 1875, "founderName": "Jasper Newton \"Jack\" Daniel", "latitude": 35.2840, "longitude": -86.3680, "websiteLink": "https://www.jackdaniels.com/en-us", "logoPictureName": "jackdaniels.jpg"}
+  ]
+
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [DistilleryService],
@@ -21,11 +27,6 @@ describe('DistilleryService', () => {
 
   it('should get all distilleries', () => {
 
-    let distilleries: Distillery[] =
-    [
-      {"distilleryId": 1, "name": "Glenfiddich", "country": "Scotland", "region": "Speyside", "foundedYear": 1886, "founderName": "William Grant", "latitude": 57.4550, "longitude": -3.1290, "websiteLink": "https://www.glenfiddich.com/us/", "logoPictureName": "glenfiddich.jpg"},
-      {"distilleryId": 2, "name": "Jack Daniels\"", "country": "United States", "region": "Southeast", "foundedYear": 1875, "founderName": "Jasper Newton \"Jack\" Daniel", "latitude": 35.2840, "longitude": -86.3680, "websiteLink": "https://www.jackdaniels.com/en-us", "logoPictureName": "jackdaniels.jpg"}
-    ]
 
     dataService.getAllDistilleries()
     .subscribe(
@@ -34,7 +35,7 @@ describe('DistilleryService', () => {
 
     const req = httpTestingController.expectOne('../../assets/distillery.json');
     expect(req.request.method).toEqual("GET");
-    req.flush(distilleries);
+    req.flush(distilleries); // This is what will actually fire our test for our observable to subscribe to.
 
     httpTestingController.verify();
   });

@@ -10,7 +10,11 @@ import { map, combineLatest, catchError } from 'rxjs/operators'
 })
 export class WhiskeyService {
 
-  allWhiskeys$ = this.http.get<Whiskey[]>('../../assets/whiskey.json').pipe();
+  getAllWhiskies(): Observable<Whiskey[]> {
+    return this.http.get<Whiskey[]>('../../assets/whiskey.json');
+  }
+
+  allWhiskeys$ = this.getAllWhiskies();
 
   constructor(private http: HttpClient, private distilleryService: DistilleryService) { }
 }
