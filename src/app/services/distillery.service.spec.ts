@@ -20,9 +20,22 @@ describe('DistilleryService', () => {
   });
 
   it('should get all distilleries', () => {
+
+    let distilleries: Distillery[] =
+    [
+      {"distilleryId": 1, "name": "Glenfiddich", "country": "Scotland", "region": "Speyside", "foundedYear": 1886, "founderName": "William Grant", "latitude": 57.4550, "longitude": -3.1290, "websiteLink": "https://www.glenfiddich.com/us/", "logoPictureName": "glenfiddich.jpg"},
+      {"distilleryId": 2, "name": "Jack Daniels\"", "country": "United States", "region": "Southeast", "foundedYear": 1875, "founderName": "Jasper Newton \"Jack\" Daniel", "latitude": 35.2840, "longitude": -86.3680, "websiteLink": "https://www.jackdaniels.com/en-us", "logoPictureName": "jackdaniels.jpg"}
+    ]
+
     dataService.getAllDistilleries()
     .subscribe(
-      ((data: Distillery[]) => expect(data.length).toBeGreaterThan(2))
+      ((data) => expect(data.length).toBe(2))
     )
+
+    const req = httpTestingController.expectOne('../../assets/distillery.json');
+    expect(req.request.method).toEqual("GET");
+    req.flush(distilleries);
+
+    httpTestingController.verify();
   });
 });

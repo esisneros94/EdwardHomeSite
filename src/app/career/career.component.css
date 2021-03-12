@@ -11,11 +11,10 @@
   min-height: 100%;
 }
 .skillsListItem {
-  display: flex;
+  display: inline-block;
   justify-content: center;
-  align-items: center;
   font-size: 1em;
-
+  margin: .1em ;
 }
 .bottomScrollBoxes {
   height: 100%;
