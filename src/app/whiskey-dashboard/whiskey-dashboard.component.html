@@ -70,8 +70,8 @@
             <div *ngFor="let whiskey of WhiskeyTableElements" class='col-md-4 cardContainer' >
               <mat-card class="whiskeyCard">
                 <mat-card-title>{{ whiskey.name }}</mat-card-title>
-                <mat-card-subtitle> Scotland</mat-card-subtitle>
-                <img src= "hello" height="150em">
+                <mat-card-subtitle> {{ whiskey.distilleryCountry }} </mat-card-subtitle>
+                <img src= "../../assets/images/{{whiskey.name}}.jpeg" height="150em">
                   <mat-card-content>
                     Bottle Price: {{whiskey.bottlePrice}} <br/>
                     Whiskey Grade: A+ <br/>
