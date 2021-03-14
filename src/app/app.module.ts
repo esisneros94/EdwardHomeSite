@@ -13,6 +13,8 @@ import { HomeComponent } from './home/home.component';
 import { MatCardModule } from '@angular/material/card';
 import { WhiskeyDashboardComponent } from './whiskey-dashboard/whiskey-dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
@@ -29,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     MatCardModule,
     AppRoutingModule,
+    MatTableModule,
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
@@ -37,6 +40,7 @@ import { HttpClientModule } from '@angular/common/http';
       {path: 'whiskey', component: WhiskeyDashboardComponent},
       {path: '**', component: HomeComponent}
     ]),
+    NoopAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -43,28 +43,48 @@
         </div>
       </div>
     </div>
+
     <div class='row' style='height: 60%;'>
       <div class='col-md-12' style="height: auto;">
-        <div style='width: 94%; margin-left: 2.5em;' *ngIf="isTableShowing">
-          <table style='border: 1px solid cornflowerblue; width: 100%;'>
-            <tr style="background-color: lightslategray; height: 1em;">
-              <td>Whiskey Image</td>
-              <td>Whiskey Name</td>
-              <td>Whiskey Country</td>
-              <td>Whiskey Price</td>
-              <td>Whiskey Type</td>
-              <td>Whiskey Grade</td>
-            </tr>
-            <tr *ngFor = "let whiskey of WhiskeyTableElements" style='height: 2em;'>
-              <td><img src="../../assets/images/{{whiskey.name}}.jpeg" class='imageWrapper' /></td>
-              <td>{{ whiskey.name }}</td>
-              <td> {{ whiskey.distilleryCountry }} </td>
-              <td> {{ whiskey.bottlePrice | currency: 'USD':'symbol': '1.2-2' }} </td>
-              <td> {{ whiskey.whiskeyType }}</td>
-              <td> This is hard-coded </td>
-            </tr>
+        <div style='width: 94%; margin-left: 2.5em;' class="mat-elevation-z8" *ngIf="isTableShowing">
+
+          <table mat-table [dataSource]="WhiskeyTableElements">
+
+            <ng-container matColumnDef="image">
+              <th mat-header-cell *matHeaderCellDef> Whiskey Image </th>
+              <td mat-cell *matCellDef="let whiskey"><img src="../../assets/images/{{whiskey.name}}.jpeg" class='imageWrapper'/> </td>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef style='margin-left: 100px !important;'> Whiskey Name </th>
+              <td mat-cell *matCellDef="let whiskey"> {{whiskey.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="country">
+              <th mat-header-cell *matHeaderCellDef> Whiskey Country </th>
+              <td mat-cell *matCellDef="let whiskey"> {{whiskey.distilleryCountry}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="price">
+              <th mat-header-cell *matHeaderCellDef> Whiskey Price </th>
+              <td mat-cell *matCellDef="let whiskey"> {{ whiskey.bottlePrice | currency: 'USD':'symbol': '1.2-2' }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="type">
+              <th mat-header-cell *matHeaderCellDef> Whiskey Type </th>
+              <td mat-cell *matCellDef="let whiskey"> {{whiskey.whiskeyType}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="grade">
+              <th mat-header-cell *matHeaderCellDef> Whiskey Grade </th>
+              <td mat-cell *matCellDef="let whiskey"> A+ </td>
+            </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+              <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
           </table>
         </div>
+
         <div style='width: 100%;' *ngIf="!isTableShowing">
           <div class="cardsWrapper">
             <div *ngFor="let whiskey of WhiskeyTableElements" class='col-md-4 cardContainer' >
@@ -83,5 +103,5 @@
     </div>
       </div>
     </div>
-</div>
+  </div>
 </div>
