@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Whiskey } from 'src/assets/models/whiskey';
 import { Review } from '../review';
+import { WhiskeyService } from '../services/whiskey.service';
+import { DistilleryService } from '../services/distillery.service';
+import { combineLatest } from 'rxjs';
+import { map, tap } from 'rxjs/operators'
+import { HttpClient } from '@angular/common/http';
+
 
 
 @Component({
@@ -7,26 +14,12 @@ import { Review } from '../review';
   templateUrl: './whiskey-dashboard.component.html',
   styleUrls: ['./whiskey-dashboard.component.css']
 })
-export class WhiskeyDashboardComponent implements OnInit {
+export class WhiskeyDashboardComponent implements OnInit{
   amountOfRecords = 0;
   isTableShowing = true;
+  WhiskeyTableElements = Array<Whiskey>();
   buttonHelper = 'Show Cards'
 
-  Reviews = [
-      new Review(1, 'Monkey Shoulder', 'Scotland', 'Single Malt Scotch', 38.99, 'assets/images/monkeyShoulder.jpeg', 'B', 'A lot of caramel tones'),
-      new Review(2, '1792', 'United States', 'Bourbon', 53.99, 'assets/images/1792.jpeg', 'B', 'A whiskey with 50% alcohol content'),
-      new Review(3, 'Glenfiddich 12', 'Scotland', 'Scotch', 40.99, 'assets/images/Glenfiddich12.jpeg', 'B', 'Very powerful, smokey'),
-      new Review(4, 'Glenlivet 12', 'Scotland', 'Scotch', 32.99, 'assets/images/Glenlivet12.jpeg', 'B', 'Smooth with some hints of oak'),
-      new Review(5, 'Screwball PB Whiskey', 'American', 'Whiskey', 17.99, 'assets/images/Screwball.jpeg', 'C', 'It\'s All peanut butter'),
-  ];
-
-
-
-  constructor() { }
-
-  ngOnInit() {
-    this.amountOfRecords = this.Reviews.length;
-  }
 
   toggleTableView() {
     this.isTableShowing = !this.isTableShowing;
@@ -38,4 +31,24 @@ export class WhiskeyDashboardComponent implements OnInit {
     }
   }
 
+  whiskeysWithDistilleries$ = combineLatest([
+    this.whiskeyService.allWhiskeys$,
+    this.distilleryService.allDistilleries$
+  ]).pipe(
+    map(([whiskies, distilleries]) =>
+      whiskies.map(whiskey => ({
+        ...whiskey,
+        distilleryName: distilleries.find(d => d.distilleryId === whiskey.distilleryId).name,
+        distilleryCountry: distilleries.find(d => d.distilleryId === whiskey.distilleryId).country
+      }) as Whiskey ))
+  );
+
+
+  ngOnInit() {
+    this.whiskeysWithDistilleries$.subscribe(
+      (data => this.WhiskeyTableElements = data)
+    )
+  }
+
+  constructor(private http: HttpClient, private whiskeyService: WhiskeyService, private distilleryService: DistilleryService) { }
 }

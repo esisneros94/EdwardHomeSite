@@ -11,8 +11,8 @@ import { careerComponent } from './career/career.component';
 import { StarComponent } from './shared/star.component';
 import { HomeComponent } from './home/home.component';
 import { MatCardModule } from '@angular/material/card';
-import { WhiskeyReviewsComponent } from './whiskey-reviews/whiskey-reviews.component';
 import { WhiskeyDashboardComponent } from './whiskey-dashboard/whiskey-dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -23,18 +23,17 @@ import { WhiskeyDashboardComponent } from './whiskey-dashboard/whiskey-dashboard
     careerComponent,
     StarComponent,
     HomeComponent,
-    WhiskeyReviewsComponent,
     WhiskeyDashboardComponent,
   ],
   imports: [
     BrowserModule,
     MatCardModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
       {path: 'education', component: educationComponent},
       {path: 'career', component: careerComponent},
-      {path: 'reviews', component: WhiskeyReviewsComponent},
       {path: 'whiskey', component: WhiskeyDashboardComponent},
       {path: '**', component: HomeComponent}
     ]),
