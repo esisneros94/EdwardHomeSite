@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Whiskey } from '../../assets/models/whiskey';
 import { DistilleryService } from './distillery.service';
-import { map, combineLatest, catchError } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
