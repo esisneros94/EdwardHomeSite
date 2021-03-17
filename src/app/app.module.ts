@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { MatCardModule } from '@angular/material/card';
 import { WhiskeyDashboardComponent } from './whiskey-dashboard/whiskey-dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { WhiskeyDetailComponent } from './whiskey-detail/whiskey-detail.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     StarComponent,
     HomeComponent,
     WhiskeyDashboardComponent,
+    WhiskeyDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
       {path: 'education', component: educationComponent},
       {path: 'career', component: careerComponent},
       {path: 'whiskey', component: WhiskeyDashboardComponent},
+      {path: 'whiskeydetail', component: WhiskeyDetailComponent},
       {path: '**', component: HomeComponent}
     ]),
   ],
