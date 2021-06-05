@@ -14,6 +14,8 @@ import { MatCardModule } from '@angular/material/card';
 import { WhiskeyDashboardComponent } from './whiskey-dashboard/whiskey-dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WhiskeyDetailComponent } from './whiskey-detail/whiskey-detail.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
@@ -31,6 +33,7 @@ import { WhiskeyDetailComponent } from './whiskey-detail/whiskey-detail.componen
     BrowserModule,
     MatCardModule,
     AppRoutingModule,
+    MatTableModule,
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
@@ -40,6 +43,7 @@ import { WhiskeyDetailComponent } from './whiskey-detail/whiskey-detail.componen
       {path: 'whiskeydetail', component: WhiskeyDetailComponent},
       {path: '**', component: HomeComponent}
     ]),
+    NoopAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
