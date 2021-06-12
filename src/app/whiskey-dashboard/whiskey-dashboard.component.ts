@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Whiskey } from 'src/assets/models/whiskey';
-import { Review } from '../review';
 import { WhiskeyService } from '../services/whiskey.service';
 import { DistilleryService } from '../services/distillery.service';
 import { combineLatest } from 'rxjs';
-import { map, tap } from 'rxjs/operators'
+import { map } from 'rxjs/operators'
 import { HttpClient } from '@angular/common/http';
 
 
@@ -17,6 +16,7 @@ import { HttpClient } from '@angular/common/http';
 export class WhiskeyDashboardComponent implements OnInit{
   amountOfRecords = 0;
   isTableShowing = true;
+  columnsToDisplay: string[] = ['image', 'name', 'country', 'price', 'type', 'grade'];
   WhiskeyTableElements = Array<Whiskey>();
   buttonHelper = 'Show Cards'
 

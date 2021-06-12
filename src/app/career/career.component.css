@@ -28,3 +28,24 @@
 .skillsListRow {
   height: 33.3%;
 }
+
+table.mat-table th {
+  text-align: center !important;
+}
+
+.mat-elevation-z8 table.mat-table th {
+  background-color: cornflowerblue;
+  color: black;
+  font-size: 1em;
+}
+
+.mat-elevation-z8 table.mat-table td {
+  color: black;
+  font-size: .9em;
+}
+
+.mat-paginator {
+  display: flex;
+  justify-content: center;
+}
+

@@ -136,3 +136,11 @@ table tr:nth-child(odd) {
   width: 80px;
   height: 80px;
 }
+
+table {
+  width: 100%;
+}
+
+table.mat-table th {
+  text-align: center !important;
+}
