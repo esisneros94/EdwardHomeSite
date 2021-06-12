@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { WhiskeyDetailComponent } from './whiskey-detail/whiskey-detail.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { MatTableModule } from '@angular/material/table';
     MatCardModule,
     AppRoutingModule,
     MatTableModule,
+    MatPaginatorModule,
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([

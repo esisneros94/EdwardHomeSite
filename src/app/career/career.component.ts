@@ -1,33 +1,40 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { Skill } from '../../assets/models/skill';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'career',
-  templateUrl: '/career.component.html',
-  styleUrls:
-  [
-      '/career.component.css'
-  ]
+  templateUrl: './career.component.html',
+  styleUrls: ['./career.component.css']
 })
 
 
-export class careerComponent implements OnInit {
-  skills: any[] = [
-  { name: 'ASP.NET', skillRanking: 3},
-  { name: 'Angular', skillRanking: 3},
-  { name: 'Git', skillRanking: 3 },
-  { name: 'SQL Server', skillRanking: 3 },
-  { name: 'JavaScript', skillRanking: 3 },
-  { name: 'CI/CD', skillRanking: 2 },
-  { name: 'Visual Studio', skillRanking: 3 },
-  { name: 'Red Gate', skillRanking: 3 },
-  { name: 'VS Code', skillRanking: 3 },
-  { name: 'Notepad++', skillRanking: 3 },
-  { name: 'Scrum/Kanban', skillRanking: 3 },
-  { name: 'Data Structures', skillRanking: 2 },
-  { name: 'Git Kraken', skillRanking: 3 }
-]
+export class careerComponent implements AfterViewInit {
+  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
 
-  ngOnInit() {
-    console.log(this.skills);
+  skills: Skill[] =
+  [
+    { name: 'ASP.NET', rating: 3},
+    { name: 'Angular', rating: 3},
+    { name: 'Git', rating: 3 },
+    { name: 'SQL Server', rating: 3 },
+    { name: 'JavaScript', rating: 3 },
+    { name: 'CI/CD', rating: 2 },
+    { name: 'Visual Studio', rating: 3 },
+    { name: 'Red Gate', rating: 3 },
+    { name: 'VS Code', rating: 3 },
+    { name: 'Notepad++', rating: 3 },
+    { name: 'Scrum/Kanban', rating: 3 },
+    { name: 'Data Structures', rating: 5 },
+    { name: 'Git Kraken', rating: 3 }
+  ]
+
+  columnsToDisplay: string[]= ['name', 'rating'];
+  dataSource = new MatTableDataSource<Skill>(this.skills);
+
+
+  ngAfterViewInit() {
+      this.dataSource.paginator = this.paginator;
   }
 }
